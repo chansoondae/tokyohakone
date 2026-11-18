@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/*
+ * 수평선 (Horizon) — 도쿄에서 하코네로, 12월의 바다와 산
+ * 쪽빛(藍) 남색을 주조색으로, 송림의 초록을 이동·교통에,
+ * 주홍 해(朱)는 인장·해 같은 작은 포인트에만 씁니다.
+ * 본문 글자는 모두 흰 배경 기준 WCAG AA(4.5:1) 이상입니다.
+ */
+@theme inline {
+  --color-paper: #f4f2ed;      /* 겨울 와시 */
+  --color-card: #ffffff;
+  --color-ink: #1a2130;        /* 남색 먹 */
+  --color-ink-sub: #4b5463;
+  --color-ink-faint: #656d7a;
+  --color-line: #e3e0d8;
+  --color-accent: #2f4c7a;     /* 쪽빛 */
+  --color-accent-soft: #e6ebf3;
+  --color-moss: #3f6656;       /* 하코네 송림 */
+  --color-moss-soft: #e5eee9;
+  --color-sun: #c24e2c;        /* 주홍 해 · 인장 */
+  --color-sun-soft: #f6e6df;
+  --color-night: #1e2b45;      /* 히어로 밤하늘 */
+
+  --font-sans: var(--font-noto-sans), "Apple SD Gothic Neo", system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif), "AppleMyungjo", serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media print {
+  header, nav, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+  main {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
